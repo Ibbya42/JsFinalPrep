@@ -34,6 +34,8 @@ function userHTML(user){
 // Route to a new page using Vanilla JS 
 function showUserPosts(id){
     localStorage.setItem("id",id)
+    // Window location is used to collect the link of the desired page it is rerouted to. 
+    // Origin is used to make the rerouting more dynamic. 
     window.location.href = `${window.location.origin}/user.html`
     
 }
