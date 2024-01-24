@@ -20,7 +20,7 @@ main();
 
 // Create a function userHtml that will have all the information that will show on the page
 function userHTML(user){
-    return `<div class="user-card">
+    return `<div class="user-card" onclick="showUserPosts(${user.id})">
     <div class="user-card__container">
     <h3>${user.name}</h4>
     <p><b>Email:</b> ${user.email}</p>
@@ -29,4 +29,11 @@ function userHTML(user){
     ${user.website}</a></p>
 </div>
 </div>`;
+}
+
+// Route to a new page using Vanilla JS 
+function showUserPosts(id){
+    localStorage.setItem("id",id)
+    window.location.href = `${window.location.origin}/user.html`
+    
 }
