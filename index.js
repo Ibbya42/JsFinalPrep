@@ -12,16 +12,21 @@ async function main(){
     const userListEl = document.querySelector('.user-list');
     // Set the innerHtml to the element data which we mapped to recieved all the data
     // from the api in the styled format 
-    userListEl.innerHTML = usersData.map((user) => `<div class="user-card">
-    <div class="user-card__container">
-        <h3>${user.name}</h4>
-        <p><b>Email:</b> ${user.email}</p>
-        <p><b>Phone:</b> ${user.phone}</p>
-        <p><b>Website:</b> <a href="${user.website}" target="_blank">
-        ${user.website}</a></p>
-    </div>
-    </div>`).join("");
+    userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("");
    
 }
 
 main();
+
+// Create a function userHtml that will have all the information that will show on the page
+function userHTML(user){
+    return `<div class="user-card">
+    <div class="user-card__container">
+    <h3>${user.name}</h4>
+    <p><b>Email:</b> ${user.email}</p>
+    <p><b>Phone:</b> ${user.phone}</p>
+    <p><b>Website:</b> <a href="https://${user.website}" target="_blank">
+    ${user.website}</a></p>
+</div>
+</div>`;
+}
