@@ -8,7 +8,7 @@ async function main(){
     const users = await fetch("https://jsonplaceholder.typicode.com/users")
     // Create a const that will convert the backend data to frontend data. 
     const usersData = await users.json();
-    // Creating a const that will call the html document through query selector
+    // Creating a const that will call the html document div through query selector
     const userListEl = document.querySelector('.user-list');
     // Set the innerHtml to the element data which we mapped to recieved all the data
     // from the api in the styled format 
@@ -33,6 +33,7 @@ function userHTML(user){
 
 // Route to a new page using Vanilla JS 
 function showUserPosts(id){
+    // Save the id on the local storage
     localStorage.setItem("id",id)
     // Window location is used to collect the link of the desired page it is rerouted to. 
     // Origin is used to make the rerouting more dynamic. 
