@@ -31,7 +31,7 @@ function userHTML(user){
 </div>`;
 }
 
-// Route to a new page using Vanilla JS 
+// Route to a new page using Vanilla JS - Will reroute to user.js
 function showUserPosts(id){
     // Save the id on the local storage
     localStorage.setItem("id",id)
